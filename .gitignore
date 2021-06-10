@@ -1,0 +1,11 @@
+/node_modules/
+.jshintrc
+.eslintrc
+/.vscode/
+/plugins/
+
+package-lock.json
+
+/css/
+/fonts/
+/images/
