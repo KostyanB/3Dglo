@@ -1,4 +1,5 @@
-'use strict';
+import './css/bootstrap.min.css';
+import './css/style.css';
 import countTimer from './modules/countTimer';
 import toggleMenu from './modules/toggleMenu';
 import togglePopup from './modules/togglePopup';
@@ -9,10 +10,14 @@ import maskInput from './modules/maskInput';
 import validInput from './modules/validInput';
 import calc from './modules/calc';
 import checkEmptyInputs from './modules/checkEmptyInputs';
+import smoothScroll from './modules/smoothScroll';
 import SliderCarousel from './modules/sliderCarousel';
 
+// установка даты +2дня от текущего времени
+const deadline = new Date();
+deadline.setDate(deadline.getDate() + 2);
 // Timer
-countTimer('30 june 2021'); // аргументом передать дату окончания акции
+countTimer(deadline); // аргументом передать дату окончания акции
 // Меню
 toggleMenu();
 //popup
@@ -27,10 +32,12 @@ ourTeam();
 maskInput();
 // Валидация и корректировка текстовых input
 validInput();
-// Калькулятор
+// Калькулятор. Базовая цена по-умолчанию 100р
 calc(100);
 // проверка пустых форм
 checkEmptyInputs();
+// плавный скролл
+smoothScroll();
 // карусель
 const carousel = new SliderCarousel({
     main: '.companies-wrapper',

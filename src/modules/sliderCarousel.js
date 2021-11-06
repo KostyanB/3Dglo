@@ -1,4 +1,3 @@
-'use strict'
 class SliderCarousel {
     constructor({
         main,
@@ -58,7 +57,6 @@ class SliderCarousel {
             }
             `;
         document.head.appendChild(style);
-        //}
     }
 
     prevSlider() {
@@ -98,29 +96,29 @@ class SliderCarousel {
 
         const style = document.createElement('style');
         style.textContent = `
-        .glo-slider__prev,
-        .glo-slider__next {
-            margin: 0 30px;
-            border: 20px solid transparent;
-            background: transparent;
-            cursor: pointer;
-            position: relative;
-        }
-        .glo-slider__next {
-            border-left-color: #19b5fe;
-            left: 30%;
-        }
-        .glo-slider__prev {
-            border-right-color: #19b5fe;
-            right: 30%;
-        }
-        .glo-slider__prev:hover,
-        .glo-slider__next:hover,
-        .glo-slider__prev:focus,
-        .glo-slider__next:focus {
-            background: transparent;
-            outline: transparent;
-        }
+            .glo-slider__prev,
+            .glo-slider__next {
+                margin: 0 30px;
+                border: 20px solid transparent;
+                background: transparent;
+                cursor: pointer;
+                position: relative;
+            }
+            .glo-slider__next {
+                border-left-color: #19b5fe;
+                left: 30%;
+            }
+            .glo-slider__prev {
+                border-right-color: #19b5fe;
+                right: 30%;
+            }
+            .glo-slider__prev:hover,
+            .glo-slider__next:hover,
+            .glo-slider__prev:focus,
+            .glo-slider__next:focus {
+                background: transparent;
+                outline: transparent;
+            }
         `;
         document.head.appendChild(style);
     }

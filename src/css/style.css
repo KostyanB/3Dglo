@@ -1,7 +1,6 @@
 @font-face {
     font-family: Roboto;
-    src: url(../fonts/Roboto-Light.eot);
-    src: url(../fonts/Roboto-Light.eot?#iefix) format("embedded-opentype"), url(../fonts/Roboto-Light.woff2) format("woff2"), url(../fonts/Roboto-Light.woff) format("woff"), url(../fonts/Roboto-Light.ttf) format("truetype"), url(../fonts/Roboto-Light.svg#Roboto-Light) format("svg");
+    src: url(../fonts/Roboto-Light.woff2) format("woff2"), url(../fonts/Roboto-Light.woff) format("woff");
     font-weight: 300;
     font-style: normal;
     font-display: swap
@@ -9,8 +8,7 @@
 
 @font-face {
     font-family: Roboto;
-    src: url(../fonts/Roboto-Regular.eot);
-    src: url(../fonts/Roboto-Regular.eot?#iefix) format("embedded-opentype"), url(../fonts/Roboto-Regular.woff2) format("woff2"), url(../fonts/Roboto-Regular.woff) format("woff"), url(../fonts/Roboto-Regular.ttf) format("truetype"), url(../fonts/Roboto-Regular.svg#Roboto-Regular) format("svg");
+    src: url(../fonts/Roboto-Regular.woff2) format("woff2"), url(../fonts/Roboto-Regular.woff) format("woff");
     font-weight: 400;
     font-style: normal;
     font-display: swap
@@ -18,8 +16,7 @@
 
 @font-face {
     font-family: Roboto;
-    src: url(../fonts/Roboto-Medium.eot);
-    src: url(../fonts/Roboto-Medium.eot?#iefix) format("embedded-opentype"), url(../fonts/Roboto-Medium.woff2) format("woff2"), url(../fonts/Roboto-Medium.woff) format("woff"), url(../fonts/Roboto-Medium.ttf) format("truetype"), url(../fonts/Roboto-Medium.svg#Roboto-Medium) format("svg");
+    src: url(../fonts/Roboto-Medium.woff2) format("woff2"), url(../fonts/Roboto-Medium.woff) format("woff");
     font-weight: 500;
     font-style: normal;
     font-display: swap
@@ -27,8 +24,7 @@
 
 @font-face {
     font-family: Roboto;
-    src: url(../fonts/Roboto-Bold.eot);
-    src: url(../fonts/Roboto-Bold.eot?#iefix) format("embedded-opentype"), url(../fonts/Roboto-Bold.woff2) format("woff2"), url(../fonts/Roboto-Bold.woff) format("woff"), url(../fonts/Roboto-Bold.ttf) format("truetype"), url(../fonts/Roboto-Bold.svg#Roboto-Bold) format("svg");
+    src: url(../fonts/Roboto-Bold.woff2) format("woff2"), url(../fonts/Roboto-Bold.woff) format("woff");
     font-weight: 700;
     font-style: normal;
     font-display: swap
@@ -102,12 +98,13 @@ body menu {
     -ms-flex-pack: center;
     justify-content: center;
     -webkit-transform: translateX(-100%);
-    transform: translateX(-100%)
+    transform: translateX(-100%);
+    padding-left: 0;
 }
 
 body .active-menu {
-    -webkit-transition: 1s;
-    transition: 1s;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
     -webkit-transform: translateX(100%);
     transform: translateX(100%)
 }
@@ -1086,6 +1083,20 @@ footer .web {
 }
 
 @media (max-width:575px) {
+
+    body menu {
+        width: 100%;
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+
+    body .active-menu {
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+
     .service img {
         display: none
     }

@@ -1,9 +1,12 @@
-'use strict'
 import maskPhone from './maskPhone';
+
 const maskInput = () => {
-    document.body.addEventListener('input', (e) => {
+    document.body.addEventListener('input', e => {
         // числовые input
-        if (e.target.placeholder === 'Общая площадь*' || e.target.placeholder === 'Количество помещений' || e.target.placeholder === 'Срок исполнения (в днях)') {
+        if (e.target.placeholder === 'Общая площадь*' ||
+            e.target.placeholder === 'Количество помещений' ||
+            e.target.placeholder === 'Срок исполнения (в днях)'
+        ) {
             e.target.value = e.target.value.replace(/[^0-9]/g, '');
         }
         // Ваше имя

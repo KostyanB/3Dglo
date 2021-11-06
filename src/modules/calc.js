@@ -1,12 +1,11 @@
-'use strict'
 import animate from './animate';
 const calc = (price = 100) => {
     const calcBlock = document.querySelector('.calc-block'),
         calcSquare = document.querySelector('.calc-square'),
         calcCount = document.querySelector('.calc-count'),
         calcDay = document.querySelector('.calc-day'),
-        totalValue = document.getElementById('total');
-        let calcType = document.querySelector('.calc-type');
+        totalValue = document.getElementById('total'),
+        calcType = document.querySelector('.calc-type');
 
     const countSum = () => {
         let total = 0,
@@ -28,7 +27,7 @@ const calc = (price = 100) => {
         }
         // анимация total
         const totalAnim = () => {
-            animate( {
+            animate({
                 duration: 2000,
                 timing: (timeFraction) => {
                     return timeFraction;
@@ -45,7 +44,7 @@ const calc = (price = 100) => {
             calcDay.value = '';
         }
     };
-    calcBlock.addEventListener('change', (e) => {
+    calcBlock.addEventListener('change', e => {
         if (e.target.matches('select') || e.target.matches('input')) {
             countSum();
         }

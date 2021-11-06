@@ -1,17 +1,15 @@
-'use strict'
 import animate from './animate';
+
 const togglePopup = () => {
     const popUp = document.querySelector('.popup'),
-        popupBtn = document.querySelectorAll('.popup-btn');
-    let popupContent = document.querySelector('.popup-content');
+        popupBtn = document.querySelectorAll('.popup-btn'),
+        popupContent = document.querySelector('.popup-content');
     // анимация popup
     const popupAnim = () => {
-        animate( {
+        animate({
             duration: 500,
-            timing: (timeFraction) => {
-                return timeFraction;
-            },
-            draw: (progress) => {
+            timing: timeFraction => timeFraction,
+            draw: progress => {
                 const popupPosTop = popupContent.getBoundingClientRect().top,
                     clientHeight = document.documentElement.clientHeight,
                     stopPosTop = clientHeight / 10, //10% задано в CSS
@@ -24,7 +22,7 @@ const togglePopup = () => {
         });
     };
 
-    popupBtn.forEach((elem) => {
+    popupBtn.forEach(elem => {
         elem.addEventListener('click', () => {
             // popupContent по центру горизонтально
             const userWidth = document.documentElement.clientWidth;
@@ -42,7 +40,7 @@ const togglePopup = () => {
         });
     });
 
-    popUp.addEventListener('click', (e) => {
+    popUp.addEventListener('click', e => {
         let target = e.target;
 
         if (target.classList.contains('popup-close')) {

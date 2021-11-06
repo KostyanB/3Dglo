@@ -1,11 +1,10 @@
-'use strict'
 const slider = () => {
     const slider = document.querySelector('.portfolio-content'),
         slide = document.querySelectorAll('.portfolio-item'),
         dots = document.querySelector('.portfolio-dots');
 
     const addDot = () => {
-        let newDot = document.createElement('li');
+        const newDot = document.createElement('li');
         newDot.classList.add('dot');
         slide.forEach((item, i) => {
             item[i] = newDot.cloneNode(true);
@@ -48,13 +47,12 @@ const slider = () => {
         clearInterval(interval);
     };
 
-    slider.addEventListener('click', (e) => {
+    slider.addEventListener('click', e => {
         e.preventDefault(); //откл ссылки-заглушки по умолчанию
-        let target = e.target;
+        const target = e.target;
+        //ограгичили клик по неселекторам
+        if (!target.matches('.portfolio-btn, .dot')) return;
 
-        if (!target.matches('.portfolio-btn, .dot')) { //ограгичили клик по неселекторам
-            return;
-        }
         prevSlide(slide, currentSlide, 'portfolio-item-active');
         prevSlide(dot, currentSlide, 'dot-active');
 
@@ -80,12 +78,12 @@ const slider = () => {
         nextSlide(dot, currentSlide, 'dot-active');
     });
 
-    slider.addEventListener('mouseover', (e) => {
+    slider.addEventListener('mouseover', e => {
         if (e.target.matches('.portfolio-btn') || e.target.matches('.dot')) {
             stopSlide();
         }
     });
-    slider.addEventListener('mouseout', (e) => {
+    slider.addEventListener('mouseout', e => {
         if (e.target.matches('.portfolio-btn') || e.target.matches('.dot')) {
             startSlide(timeSlider);
         }

@@ -1,16 +1,15 @@
-'use strict'
 const ourTeam = () => {
     const command = document.querySelector('.command');
     let newPhoto, oldPhoto;
 
-    command.addEventListener('mouseover', (e) => {
+    command.addEventListener('mouseover', e => {
         newPhoto = e.target.dataset.img;
         oldPhoto = e.target.getAttribute('src');
         if (e.target.classList.contains('command__photo')) {
             e.target.src = newPhoto;
         }
     });
-    command.addEventListener('mouseout', (e) => {
+    command.addEventListener('mouseout', e => {
         if (e.target.classList.contains('command__photo')) {
             e.target.src = oldPhoto;
         }
